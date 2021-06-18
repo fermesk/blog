@@ -8,6 +8,7 @@
     </head>
     <body>
         <div class="wrapper">
+            <h1><a href="{% url 'article' %}"><img style="max-width: 100px;"src="{% static 'success.svg' %}"></a></h1>
             {% block content %}
             {% endblock%}
         </div>

@@ -6,6 +6,7 @@ from .import views
 # Create your models here.
 
 urlpatterns = [
-    path('', views.article_list),
+    path('', views.article_list,name="article"),
+    path('<slug>/', views.article_detail,name="article_detail"),
 
 ]
