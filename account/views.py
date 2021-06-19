@@ -2,6 +2,8 @@ from django.http.response import HttpResponse
 from django.shortcuts import render,HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse
+from django.contrib.auth import login
+
 
 
 # Create your views here.
@@ -20,6 +22,8 @@ def signin(request):
     if request.method =='POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
+            user = form.get.user()
+            login(request.user)
             #log user in
             return HttpResponseRedirect(reverse('article'))
     else:
