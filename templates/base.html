@@ -9,6 +9,16 @@
     <body>
         <div class="wrapper">
             <h1><a href="{% url 'article' %}"><img style="max-width: 100px;"src="{% static 'success.svg' %}"></a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <form class="logout-link" action="{% url 'sign_out' %}" method="post">
+                         <button type="submit">log out</button>   
+                         {%csrf_token%}
+                        </form>
+                    </li>
+                </ul>
+            </nav>
             {% block content %}
             {% endblock%}
         </div>
